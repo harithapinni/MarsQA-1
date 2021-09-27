@@ -28,6 +28,8 @@ namespace MarsQA_1.Helpers
             get { return ConstantHelpers.Url; }
         }
 
+        //public static object SignInBtn { get; private set; }
+
 
         //Implicit Wait
         public static void TurnOnWait()
@@ -36,16 +38,27 @@ namespace MarsQA_1.Helpers
 
         }
 
+        /*internal static void NavigateUrl()
+        {
+            //todo:implement this
+            driver.Url = BaseUrl;
+        }*/
+
         public static void NavigateUrl()
         {
-            driver.Url = BaseUrl;
+            driver.Navigate().GoToUrl(BaseUrl);
+           
         }
 
         //Close the browser
-        public static void Close()
+        public void Close()
         {
             driver.Quit();
         }
+        
+       
 
+       
     }
 }
+
